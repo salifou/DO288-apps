@@ -1,4 +1,26 @@
 
+# Testing the s2i image
+
+```
+# Create a dir for the resulting image
+mkdir s2i-sample-app
+
+# Generate the sample app Docker file ..... 
+# s2i build require docker daemon in order to build the image
+s2i build test/test-app/ s2i-do288-httpd --as-dockerfile s2i-sample-app/Dockerfile
+
+# Build the image using podman
+sudo podman build -t s2i-sample-app .
+
+# Run the image with a random user
+sudo podman run -d -u 30139 -p 8080:8080 s2i-sample-app
+
+```
+
+
+### ORIGINAL README
+
+
 # Creating a basic S2I builder image  
 
 ## Getting started  
