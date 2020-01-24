@@ -10,6 +10,8 @@ config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
 
+echo "##### Working Dir: $(pwd)"
+
 echo "---> Installing application source"
 cp -Rf /tmp/src/*.html ./
 
